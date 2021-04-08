@@ -1,9 +1,9 @@
-import JianZhi.linked_list as ll
+import helper.linked_list as ll
 
 
-def reverse_print(lst: ll.LinkedList):
-    stack = []
-    print(lst)
+def reverse_print_linked_list(lst: ll.LinkedList):
+    stack = []  # use stack, first in last out
+
     for node in lst:
         stack.append(node.data)
 
@@ -12,4 +12,4 @@ def reverse_print(lst: ll.LinkedList):
 
 
 if __name__ == '__main__':
-    reverse_print(ll.LinkedList(["a", "b", "c", "d"]))
+    reverse_print_linked_list(ll.LinkedList(["a", "b", "c", "d"]))

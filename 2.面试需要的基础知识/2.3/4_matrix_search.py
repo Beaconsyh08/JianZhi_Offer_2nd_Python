@@ -7,13 +7,14 @@ def matrix_search(mat: [list], target: int) -> bool:
 
         while row <= rows and cols > 0:
 
+            # we choose the top right number to do the comparison
             top_right = mat[row][cols - 1]
 
             if top_right == target:
                 return True
-            elif top_right > target:
+            elif top_right > target:  # that means the right most col doesn't contain it
                 cols -= 1
-            else:  # top_right < target
+            else:  # top_right < target, that means the top row doesn't contain it
                 row += 1
 
     return False

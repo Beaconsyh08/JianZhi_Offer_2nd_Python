@@ -1,11 +1,11 @@
 class TreeNode:
-    def __init__(self, val):
+    def __init__(self, val: int):
         self.val = val
         self.left = None
         self.right = None
 
 
-def reconstruct_binary_tree(preorder: [int], inorder: [int]):
+def reconstruct_binary_tree(preorder: [int], inorder: [int]) -> int:
     if not preorder or not inorder:
         return None
 
