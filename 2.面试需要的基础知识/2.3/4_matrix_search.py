@@ -1,17 +1,20 @@
 def matrix_search(mat: [list], target: int) -> bool:
-    rows = len(mat)
-    cols = len(mat[0])
-    row = 0
-    while row <= rows and cols > 0:
+    if mat is not None:
 
-        top_right = mat[row][cols - 1]
+        rows = len(mat)
+        cols = len(mat[0])
+        row = 0
 
-        if top_right == target:
-            return True
-        elif top_right > target:
-            cols -= 1
-        else:  # top_right < target
-            row += 1
+        while row <= rows and cols > 0:
+
+            top_right = mat[row][cols - 1]
+
+            if top_right == target:
+                return True
+            elif top_right > target:
+                cols -= 1
+            else:  # top_right < target
+                row += 1
 
     return False
 

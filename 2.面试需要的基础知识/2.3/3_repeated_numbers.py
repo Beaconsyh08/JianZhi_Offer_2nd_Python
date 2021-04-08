@@ -1,5 +1,6 @@
 def repeated_number_1(lst: list) -> int:
     lst.sort()
+
     for i in range(len(lst)):
         # if adjacent numbers are equal after sorting, then repeated number appears
         if lst[i] == lst[i + 1]:
@@ -8,6 +9,7 @@ def repeated_number_1(lst: list) -> int:
 
 def repeated_number_2(lst: list) -> int:
     all_number = set()
+
     for i in range(len(lst)):
         if lst[i] in all_number:  # the set already has the number
             return lst[i]
@@ -20,6 +22,7 @@ def repeated_number_3(lst: list) -> int:
     # the same index as their index, if there is a conflict, then repeated
     for i in range(len(lst)):
         cur_num = lst[i]
+
         if cur_num != i:
             if cur_num == lst[cur_num]:
                 return cur_num
@@ -30,6 +33,7 @@ def repeated_number_3(lst: list) -> int:
 def repeated_number_4(lst: list) -> int:
     # same as method 3, but use some assistant from extra space, not modify the original one
     lst_new = [-1] * len(lst)
+
     for i in range(len(lst)):
         if lst_new[lst[i]] == lst[i]:
             return lst[i]
